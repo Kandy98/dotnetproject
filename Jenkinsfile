@@ -27,6 +27,14 @@ pipeline{
 		
             }
         }
+	stage('Code Coverage') {
+		steps {
+			echo "sending code coverage report"
+			mail to: 'kandarp.verma@gmail.com',
+      			subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
+      			body: "${env.BUILD_URL} has result ${currentBuild.result}"
+		}
+	}
         
     }
 }
