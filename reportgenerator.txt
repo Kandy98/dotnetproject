@@ -1,0 +1,8 @@
+C:\Users\kanverma\.nuget\packages\reportgenerator\4.6.6\tools\netcoreapp3.0\ReportGenerator.exe `
+	-reports:C:\Users\kanverma\Documents\dotnet training\networkspace\results.xml
+
+
+Working:
+C:\Users\kanverma\.nuget\packages\reportgenerator\4.6.6\tools\netcoreapp3.0\ReportGenerator.exe `
+ -reports:"C:\Users\kanverma\Documents\dotnet training\networkspace\results.xml" `
+-targetdir:"C:\Users\kanverma\Documents\dotnet training\networkspace\coveragereport"

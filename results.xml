@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CoverageSession xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Version="4.7.922.0">
+  <Summary numSequencePoints="17" visitedSequencePoints="12" numBranchPoints="5" visitedBranchPoints="3" sequenceCoverage="70.59" branchCoverage="60" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" maxCrapScore="2.01" minCrapScore="1" visitedClasses="2" numClasses="3" visitedMethods="2" numMethods="3" />
+  <Modules>
+    <Module skippedDueTo="Filter" hash="04-7C-61-E0-B9-4E-76-A5-97-61-0C-6D-20-27-23-0F-BC-34-A4-5D">
+      <ModulePath>C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Private.CoreLib.dll</ModulePath>
+      <ModuleTime>2020-07-16T12:27:52Z</ModuleTime>
+      <ModuleName>System.Private.CoreLib</ModuleName>
+      <Classes />
+    </Module>
+    <Module hash="28-53-B5-77-A8-1D-91-AD-4E-B6-97-75-F2-C1-46-0A-79-04-3B-6F">
+      <Summary numSequencePoints="10" visitedSequencePoints="6" numBranchPoints="2" visitedBranchPoints="1" sequenceCoverage="60" branchCoverage="50" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="1" visitedClasses="1" numClasses="2" visitedMethods="1" numMethods="2" />
+      <ModulePath>C:\Users\kanverma\Documents\dotnet training\networkspace\FirstCoreProject\bin\Debug\netcoreapp3.1\FirstCoreProject.dll</ModulePath>
+      <ModuleTime>2020-09-08T19:27:32.3699926Z</ModuleTime>
+      <ModuleName>FirstCoreProject</ModuleName>
+      <Files>
+        <File uid="1" fullPath="C:\Users\kanverma\Documents\dotnet training\networkspace\FirstCoreProject\Program.cs" />
+        <File uid="2" fullPath="C:\Users\kanverma\Documents\dotnet training\networkspace\FirstCoreProject\test.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+          <FullName>&lt;Module&gt;</FullName>
+          <Methods />
+        </Class>
+        <Class>
+          <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="1" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>FirstCoreProject.Program</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="100" branchCoverage="100" crapScore="1" isConstructor="false" isStatic="true" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="6" visitedSequencePoints="6" numBranchPoints="1" visitedBranchPoints="1" sequenceCoverage="100" branchCoverage="100" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="1" minCrapScore="1" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663297</MetadataToken>
+              <Name>System.Void FirstCoreProject.Program::Main(System.String[])</Name>
+              <FileRef uid="1" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="1" ordinal="0" offset="0" sl="9" sc="9" el="9" ec="10" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="2" ordinal="1" offset="1" sl="10" sc="13" el="10" ec="47" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="3" ordinal="2" offset="12" sl="11" sc="13" el="11" ec="63" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="4" ordinal="3" offset="23" sl="13" sc="13" el="13" ec="37" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="5" ordinal="4" offset="29" sl="14" sc="13" el="14" ec="55" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="1" uspid="6" ordinal="5" offset="43" sl="16" sc="9" el="16" ec="10" bec="0" bev="0" fileid="1" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="1" ordinal="0" offset="0" sl="9" sc="9" el="9" ec="10" bec="0" bev="0" fileid="1" />
+            </Method>
+            <Method visited="false" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" crapScore="2" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+              <MetadataToken>100663298</MetadataToken>
+              <Name>System.Void FirstCoreProject.Program::.ctor()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="7" ordinal="0" offset="0" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="1" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="1" visitedMethods="0" numMethods="1" />
+          <FullName>FirstCoreProject.test</FullName>
+          <Methods>
+            <Method visited="false" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" crapScore="2" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="1" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken>100663299</MetadataToken>
+              <Name>System.Void FirstCoreProject.test::testName()</Name>
+              <FileRef uid="2" />
+              <SequencePoints>
+                <SequencePoint vc="0" uspid="8" ordinal="0" offset="0" sl="9" sc="32" el="9" ec="33" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="9" ordinal="1" offset="1" sl="10" sc="13" el="10" ec="37" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="10" ordinal="2" offset="7" sl="11" sc="13" el="11" ec="59" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="0" uspid="11" ordinal="3" offset="26" sl="12" sc="9" el="12" ec="10" bec="0" bev="0" fileid="2" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint xsi:type="SequencePoint" vc="0" uspid="8" ordinal="0" offset="0" sl="9" sc="32" el="9" ec="33" bec="0" bev="0" fileid="2" />
+            </Method>
+            <Method visited="false" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" crapScore="2" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+              <MetadataToken>100663300</MetadataToken>
+              <Name>System.Void FirstCoreProject.test::.ctor()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="12" ordinal="0" offset="0" />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Module>
+    <Module skippedDueTo="Filter" hash="11-BD-AB-7F-6E-AA-C3-FD-A9-8D-5E-5A-CE-32-BF-FB-C5-5C-9E-76">
+      <ModulePath>C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Runtime.dll</ModulePath>
+      <ModuleTime>2020-07-21T15:34:38Z</ModuleTime>
+      <ModuleName>System.Runtime</ModuleName>
+      <Classes />
+    </Module>
+    <Module hash="28-DD-94-1F-E0-89-F9-6C-DD-8C-96-D9-5D-2C-63-6F-6D-29-C2-5A">
+      <Summary numSequencePoints="7" visitedSequencePoints="6" numBranchPoints="3" visitedBranchPoints="2" sequenceCoverage="85.71" branchCoverage="66.67" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" maxCrapScore="2.01" minCrapScore="2" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+      <ModulePath>C:\Users\kanverma\Documents\dotnet training\networkspace\FirstCoreProject\bin\Debug\netcoreapp3.1\FirstLib.dll</ModulePath>
+      <ModuleTime>2020-09-08T19:27:31.80991Z</ModuleTime>
+      <ModuleName>FirstLib</ModuleName>
+      <Files>
+        <File uid="5" fullPath="C:\Users\kanverma\Documents\dotnet training\networkspace\FirstLib\Addition.cs" />
+      </Files>
+      <Classes>
+        <Class>
+          <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" maxCrapScore="0" minCrapScore="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+          <FullName>&lt;Module&gt;</FullName>
+          <Methods />
+        </Class>
+        <Class>
+          <Summary numSequencePoints="7" visitedSequencePoints="6" numBranchPoints="3" visitedBranchPoints="2" sequenceCoverage="85.71" branchCoverage="66.67" maxCyclomaticComplexity="2" minCyclomaticComplexity="1" maxCrapScore="2.01" minCrapScore="2" visitedClasses="1" numClasses="1" visitedMethods="1" numMethods="1" />
+          <FullName>FirstLib.Addition</FullName>
+          <Methods>
+            <Method visited="true" cyclomaticComplexity="2" nPathComplexity="2" sequenceCoverage="85.71" branchCoverage="66.67" crapScore="2.01" isConstructor="false" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="7" visitedSequencePoints="6" numBranchPoints="3" visitedBranchPoints="2" sequenceCoverage="85.71" branchCoverage="66.67" maxCyclomaticComplexity="2" minCyclomaticComplexity="2" maxCrapScore="2.01" minCrapScore="2.01" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken>100663297</MetadataToken>
+              <Name>System.String FirstLib.Addition::display(System.Int32,System.Int32)</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="1" uspid="13" ordinal="0" offset="0" sl="7" sc="45" el="7" ec="46" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="14" ordinal="1" offset="1" sl="8" sc="13" el="8" ec="56" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="15" ordinal="2" offset="12" sl="15" sc="13" el="15" ec="27" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="16" ordinal="3" offset="16" sl="17" sc="13" el="17" ec="23" bec="2" bev="1" fileid="5" />
+                <SequencePoint vc="0" uspid="17" ordinal="4" offset="25" sl="18" sc="17" el="18" ec="42" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="18" ordinal="5" offset="33" sl="21" sc="17" el="21" ec="39" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="1" uspid="19" ordinal="6" offset="41" sl="22" sc="9" el="22" ec="10" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="0" uspid="20" ordinal="0" offset="23" sl="17" path="0" offsetend="25" fileid="5" />
+                <BranchPoint vc="1" uspid="21" ordinal="1" offset="23" sl="17" path="1" offsetend="33" fileid="5" />
+              </BranchPoints>
+              <MethodPoint xsi:type="SequencePoint" vc="1" uspid="13" ordinal="0" offset="0" sl="7" sc="45" el="7" ec="46" bec="0" bev="0" fileid="5" />
+            </Method>
+            <Method visited="false" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" crapScore="2" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+              <MetadataToken>100663298</MetadataToken>
+              <Name>System.Void FirstLib.Addition::.ctor()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="22" ordinal="0" offset="0" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+          <FullName>FirstLib.Class1</FullName>
+          <Methods>
+            <Method visited="false" cyclomaticComplexity="1" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" crapScore="2" isConstructor="true" isStatic="false" isGetter="false" isSetter="false">
+              <Summary numSequencePoints="0" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="1" minCyclomaticComplexity="1" maxCrapScore="2" minCrapScore="2" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="0" />
+              <MetadataToken>100663299</MetadataToken>
+              <Name>System.Void FirstLib.Class1::.ctor()</Name>
+              <SequencePoints />
+              <BranchPoints />
+              <MethodPoint vc="0" uspid="23" ordinal="0" offset="0" />
+            </Method>
+          </Methods>
+        </Class>
+      </Classes>
+    </Module>
+    <Module skippedDueTo="MissingPdb" hash="66-93-11-7A-5E-1B-B3-97-F1-C0-64-E7-98-60-FF-F1-CB-7B-87-ED">
+      <ModulePath>C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\netstandard.dll</ModulePath>
+      <ModuleTime>2020-07-21T15:35:04Z</ModuleTime>
+      <ModuleName>netstandard</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="69-F6-90-43-D2-94-19-97-9A-51-50-ED-91-CC-5B-D0-5C-19-6F-29">
+      <ModulePath>C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Console.dll</ModulePath>
+      <ModuleTime>2020-07-21T15:35:08Z</ModuleTime>
+      <ModuleName>System.Console</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="AE-56-F3-36-9A-72-FE-5A-C7-83-97-02-D9-C0-99-30-4B-21-36-5A">
+      <ModulePath>C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Runtime.Extensions.dll</ModulePath>
+      <ModuleTime>2020-07-21T15:34:38Z</ModuleTime>
+      <ModuleName>System.Runtime.Extensions</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="B9-03-94-EB-B7-34-B5-E8-3D-A0-96-D7-E0-B3-02-E4-04-22-FD-C6">
+      <ModulePath>C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Threading.dll</ModulePath>
+      <ModuleTime>2020-07-21T15:34:46Z</ModuleTime>
+      <ModuleName>System.Threading</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="94-2A-AB-7E-87-A8-FB-0C-C3-BD-4A-42-D0-13-C8-E0-EE-6C-CF-42">
+      <ModulePath>C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Text.Encoding.Extensions.dll</ModulePath>
+      <ModuleTime>2020-07-21T15:34:44Z</ModuleTime>
+      <ModuleName>System.Text.Encoding.Extensions</ModuleName>
+      <Classes />
+    </Module>
+    <Module skippedDueTo="Filter" hash="16-8F-FB-F0-E1-F5-AF-71-AF-02-92-AA-65-B6-6F-1C-4E-CD-7A-62">
+      <ModulePath>C:\Program Files\dotnet\shared\Microsoft.NETCore.App\3.1.7\System.Runtime.InteropServices.dll</ModulePath>
+      <ModuleTime>2020-07-21T15:34:40Z</ModuleTime>
+      <ModuleName>System.Runtime.InteropServices</ModuleName>
+      <Classes />
+    </Module>
+  </Modules>
+</CoverageSession>

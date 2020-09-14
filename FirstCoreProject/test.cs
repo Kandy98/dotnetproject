@@ -8,7 +8,7 @@ namespace FirstCoreProject {
         [Fact]
         public void testName() {
             var ob = new Addition();
-            Assert.Equal("ok", ob.display());
+            Assert.Equal("less than 10", ob.display(2,3));
         }
     }
 }
