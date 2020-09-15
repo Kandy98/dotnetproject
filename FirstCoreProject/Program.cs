@@ -10,14 +10,14 @@ namespace FirstCoreProject
         {
 
             System.Console.WriteLine("Enter 2 numbers:");
-            int a = Convert.ToInt32(Console.ReadLine());
-            int b = Convert.ToInt32(Console.ReadLine());
+            int a = 10; //Convert.ToInt32(Console.ReadLine());
+            int b = 10; //Convert.ToInt32(Console.ReadLine());
             int c = a+b;
 
             System.Console.WriteLine("Sum of {0} and {1} ins {2}", a,b,c);
 
             System.Console.WriteLine("Enter some amount:");
-            int d = Convert.ToInt32(Console.ReadLine());
+            int d = 256; //Convert.ToInt32(Console.ReadLine());
             System.Console.WriteLine(d.ToWords());
 
             Console.WriteLine("Hello World!");
