@@ -29,8 +29,7 @@ pipeline{
         }
 	stage('Code Coverage') {
 		steps {
-            bat """C:/Users/kanverma/.nuget/packages/opencover/4.7.922/tools/OpenCover.Console.exe `-target:"C:/Users/kanverma/Documents/dotnet training/networkspace/FirstCoreProject/bin/Debug/netcoreapp3.1/FirstCoreProject.exe" `
- -register:user"""
+            bat """C:/Users/kanverma/.nuget/packages/opencover/4.7.922/tools/OpenCover.Console.exe -target:"C:/Users/kanverma/Documents/dotnet training/networkspace/FirstCoreProject/bin/Debug/netcoreapp3.1/FirstCoreProject.exe" -register:user"""
 
 			echo "sending code coverage report"
 			mail to: 'kandarp.verma@gmail.com',
