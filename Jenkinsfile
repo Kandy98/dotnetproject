@@ -2,6 +2,7 @@ pipeline{
     agent any
     environment {
         scannerHome = tool name:'MSSonar Scanner', type: 'hudson.plugins.sonar.MsBuildSQRunnerInstallation' 
+        msbuild = tool name: 'MSBuild'
     }
     stages{
         stage('SCM'){
@@ -47,8 +48,8 @@ pipeline{
         stage('Build + SonarQube analysis') {
             steps {
                 withSonarQubeEnv('localsonar') {
-                    bat "${scannerHome}\\SonarQube.Scanner.MSBuild.exe begin /k:github-jenkins-sonar"
-                    bat 'MSBuild.exe /t:Rebuild'
+                    bat "${scannerHome}\\SonarScanner.MSBuild.exe begin /k:github-jenkins-sonar"
+                    bat "${msbuild}\\MSBuild.exe /t:Rebuild"
                     bat "${scannerHome}\\SonarQube.Scanner.MSBuild.exe end"
                 }
             }
