@@ -20,23 +20,27 @@ pipeline{
 	        	
             }
         }
-         stage('Unit-Tests'){
+        stage('Unit-Tests'){
             steps{
                 echo "Running Junit-Tests";
                 bat "dotnet test";
-		
-            }
+                }
         }
-	stage('Code Coverage') {
-		steps {
-            bat """C:/Users/kanverma/.nuget/packages/opencover/4.7.922/tools/OpenCover.Console.exe -target:"C:/Users/kanverma/Documents/dotnet training/networkspace/FirstCoreProject/bin/Debug/netcoreapp3.1/FirstCoreProject.exe" -register:user"""
 
-			echo "sending code coverage report"
-			mail to: 'kandarp.verma@gmail.com',
+	    stage('Code Coverage') {
+		    steps {
+                bat """C:/Users/kanverma/.nuget/packages/opencover/4.7.922/tools/OpenCover.Console.exe -target:"C:/Users/kanverma/Documents/dotnet training/networkspace/FirstCoreProject/bin/Debug/netcoreapp3.1/FirstCoreProject.exe" -register:user"""
+
+			    echo "sending code coverage report"
+			    mail to: 'kandarp.verma@gmail.com',
       			subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
       			body: "${env.BUILD_URL} has result ${currentBuild.result}"
-		}
-	}
-        
-    }
+		    }
+	    }
+
+        stage('Static Code Analysis')
+            sonar.projectKey=github-jenkins-sonar
+            sonar.sources=.
+            sonar.cs.opencover.reportsPaths=results.xml
+        }
 }
