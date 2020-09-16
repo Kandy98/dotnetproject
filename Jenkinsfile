@@ -7,7 +7,7 @@ pipeline{
                 git url:"https://github.com/Kandy98/dotnetproject.git"
             }
         }
-        
+
         stage('Restore-packages'){
             steps{
                 echo "Preprocessing: Restore packages";
@@ -42,11 +42,13 @@ pipeline{
 	    }
 
         stage('Build + SonarQube analysis') {
-            def sqScannerMsBuildHome = tool 'MSSonar Scanner'
-            withSonarQubeEnv('localsonar') {
-                bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe begin /k:github-jenkins-sonar"
-                bat 'MSBuild.exe /t:Rebuild'
-                bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe end"
+            steps {
+                def sqScannerMsBuildHome = tool 'MSSonar Scanner'
+                withSonarQubeEnv('localsonar') {
+                    bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe begin /k:github-jenkins-sonar"
+                    bat 'MSBuild.exe /t:Rebuild'
+                    bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe end"
+                }
             }
         }
     }
