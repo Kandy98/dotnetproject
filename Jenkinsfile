@@ -1,18 +1,20 @@
 pipeline{
     agent any
     stages{
-        stage('Git-Checkout'){
+        stage('SCM'){
             steps{
                 echo "Checking out from git repo";
                 git url:"https://github.com/Kandy98/dotnetproject.git"
             }
         }
+        
         stage('Restore-packages'){
             steps{
                 echo "Preprocessing: Restore packages";
                 bat "dotnet restore"
             }
         }
+
         stage('Build'){
             steps{
                 echo "Building the project";
@@ -20,6 +22,7 @@ pipeline{
 	        	
             }
         }
+
         stage('Unit-Tests'){
             steps{
                 echo "Running Junit-Tests";
@@ -38,11 +41,13 @@ pipeline{
 		    }
 	    }
 
-        stage('Static Code Analysis')
-            steps {
-                sonar.projectKey=github-jenkins-sonar
-                sonar.sources=.
-                sonar.cs.opencover.reportsPaths=results.xml
+        stage('Build + SonarQube analysis') {
+            def sqScannerMsBuildHome = tool 'MSSonar Scanner'
+            withSonarQubeEnv('localsonar') {
+                bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe begin /k:github-jenkins-sonar"
+                bat 'MSBuild.exe /t:Rebuild'
+                bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe end"
             }
         }
+    }
 }
