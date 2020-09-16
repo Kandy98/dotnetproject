@@ -49,7 +49,7 @@ pipeline{
             steps {
                 withSonarQubeEnv('localsonar') {
                     bat "${scannerHome}\\SonarScanner.MSBuild.exe begin /k:github-jenkins-sonar"
-                    bat "${msbuild}\\MSBuild.exe /t:Rebuild"
+                    bat "dotnet build"
                     bat "${scannerHome}\\SonarQube.Scanner.MSBuild.exe end"
                 }
             }
