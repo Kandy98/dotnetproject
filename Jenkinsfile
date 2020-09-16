@@ -39,8 +39,10 @@ pipeline{
 	    }
 
         stage('Static Code Analysis')
-            sonar.projectKey= github-jenkins-sonar
-            sonar.sources= "/"
-            sonar.cs.opencover.reportsPaths=results.xml
+            steps {
+                sonar.projectKey=github-jenkins-sonar
+                sonar.sources=.
+                sonar.cs.opencover.reportsPaths=results.xml
+            }
         }
 }
