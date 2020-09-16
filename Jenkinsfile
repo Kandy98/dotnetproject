@@ -36,7 +36,7 @@ pipeline{
         stage('Build + SonarQube analysis') {
             steps {
                 withSonarQubeEnv('localsonar') {
-                    bat """${scannerHome}\\SonarScanner.MSBuild.exe begin /d:sonar.coverage.exclusions="**Test*.cs"""
+                    bat """${scannerHome}\\SonarScanner.MSBuild.exe begin /k:sonar-project /d:sonar.coverage.exclusions="**Test*.cs"""
                     bat "dotnet build"
                     bat "${scannerHome}\\SonarScanner.MSBuild.exe end"
                 }
