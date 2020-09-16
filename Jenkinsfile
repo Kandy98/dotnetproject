@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    tools {
+        sqScannerMsBuildHome 'MSSonar Scanner'
+    }
     stages{
         stage('SCM'){
             steps{
@@ -43,7 +46,6 @@ pipeline{
 
         stage('Build + SonarQube analysis') {
             steps {
-                def sqScannerMsBuildHome = tool 'MSSonar Scanner'
                 withSonarQubeEnv('localsonar') {
                     bat "${sqScannerMsBuildHome}\\SonarQube.Scanner.MSBuild.exe begin /k:github-jenkins-sonar"
                     bat 'MSBuild.exe /t:Rebuild'
