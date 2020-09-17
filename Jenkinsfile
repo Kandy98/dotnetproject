@@ -44,7 +44,7 @@ pipeline{
             steps {
                 withSonarQubeEnv('localsonar') {
                     bat "${scannerHome}\\SonarScanner.MSBuild.exe begin /k:github-jenkins-sonar"
-                    bat "dotnet build"
+                    bat "dotnet build FirstSolution.sln"
                     bat "${scannerHome}\\SonarQube.Scanner.MSBuild.exe end"
                 }
             }
