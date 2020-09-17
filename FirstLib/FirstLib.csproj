@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <ProjectGuid>{7c065c6e-6ae8-4de4-87d0-e5a4855c5cae}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Humanizer" Version="2.8.26"/>
