@@ -36,8 +36,6 @@ pipeline{
                     sh """
                     #!/bin/bash
                     dotnet build-server shutdown
-                    ls
-                    ls FirsCoreProject
                     dotnet /sonar-scanner/SonarScanner.MSBuild.dll begin /k:FirstCoreProject /d:results.xml /d:sonar.coverage.exclusions=”**UnitTest*.cs”
                     dotnet build FirstCoreProject.sln
                     dotnet /sonar-scanner/SonarScanner.MSBuild.dll" end 
