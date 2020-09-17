@@ -7,7 +7,15 @@ pipeline{
     stages{
         stage('SCM'){
             steps{
-                checkout scm
+                echo "Checking out from git repo";
+                git url:"https://github.com/Kandy98/dotnetproject.git"
+            }
+        }
+
+        stage('Restore-packages'){
+            steps{
+                echo "Preprocessing: Restore packages";
+                bat "dotnet restore"
             }
         }
 
@@ -21,14 +29,13 @@ pipeline{
 
         stage('Unit-Tests'){
             steps{
-                echo "Running Xunit-Tests";
+                echo "Running Junit-Tests";
                 bat "dotnet test";
                 }
         }
 
 	    stage('Code Coverage') {
 		    steps {
-                echo "Checking code covergae"
                 bat """C:/Users/kanverma/.nuget/packages/opencover/4.7.922/tools/OpenCover.Console.exe -target:"C:/Users/kanverma/Documents/dotnet training/networkspace/FirstCoreProject/bin/Debug/netcoreapp3.1/FirstCoreProject.exe" -register:user"""
 		    }
 	    }
@@ -36,10 +43,9 @@ pipeline{
         stage('Build + SonarQube analysis') {
             steps {
                 withSonarQubeEnv('localsonar') {
-                    bat "dotnet build-server shutdown"
-                    bat """${scannerHome}\\SonarScanner.MSBuild.exe begin /k:github-jenkins-sonar /d:sonar.sources="/" /d:sonar.scm.exclusions.disabled=true /d:sonar.cs.opencover.reportsPaths="results.xml" /d:sonar.coverage.exclusions="**Test*.cs"""
-                    bat "dotnet build FirstSolution.sln"
-                    bat "${scannerHome}\\SonarScanner.MSBuild.exe end"
+                    bat "${scannerHome}\\SonarScanner.MSBuild.exe begin /k:github-jenkins-sonar"
+                    bat "dotnet build"
+                    bat "${scannerHome}\\SonarQube.Scanner.MSBuild.exe end"
                 }
             }
         }
