@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment {
-        scannerHome = tool name:'MSSonar Scanner', type: 'hudson.plugins.sonar.MsBuildSQRunnerInstallation' 
+        scannerHome = tool name:'MSSonar Scanner' 
         msbuild = tool name: 'MSBuild'
     }
     stages{
