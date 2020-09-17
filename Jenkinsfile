@@ -1,6 +1,9 @@
 pipeline{
     agent any
-    
+    environment {
+        scannerHome = tool name:'sonarscanner', type: 'hudson.plugins.sonar.MsBuildSQRunnerInstallation' 
+        msbuild = tool name: 'MSBuild'
+    }
     stages{
         stage('SCM'){
             steps{
@@ -34,9 +37,9 @@ pipeline{
             steps {
                 withSonarQubeEnv('localsonar') {
                     bat "dotnet build-server shutdown"
-                    bat """dotnet sonarscanner\\SonarScanner.MSBuild.dll begin /k:github-jenkins-sonar /d:sonar.sources="/" /d:sonar.cs.opencover.reportsPaths="results.xml" /d:sonar.coverage.exclusions="**Test*.cs"""
+                    bat """${scannerHome}\\SonarScanner.MSBuild.dll begin /k:github-jenkins-sonar /d:sonar.sources="/" /d:sonar.cs.opencover.reportsPaths="results.xml" /d:sonar.coverage.exclusions="**Test*.cs"""
                     bat "dotnet build FirstSolution.sln"
-                    bat "dotnet sonarscanner\\SonarScanner.MSBuild.dll end"
+                    bat "${scannerHome}\\SonarScanner.MSBuild.dll end"
                 }
             }
         }
