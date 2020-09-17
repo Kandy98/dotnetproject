@@ -36,8 +36,9 @@ pipeline{
         stage('Build + SonarQube analysis') {
             steps {
                 withSonarQubeEnv('localsonar') {
+                    bat "dotnet build-server shutdown"
                     bat """${scannerHome}\\SonarScanner.MSBuild.exe begin /k:github-jenkins-sonar /d:sonar.source="/" /d:sonar.scm.exclusions.disabled=true /d:sonar.cs.opencover.reportsPaths="results.xml" /d:sonar.coverage.exclusions="**Test*.cs"""
-                    bat "dotnet build"
+                    bat "dotnet build FirstSolution.sln"
                     bat "${scannerHome}\\SonarScanner.MSBuild.exe end"
                 }
             }
