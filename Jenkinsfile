@@ -3,6 +3,7 @@ pipeline{
 
     environment {
         scannerHome = tool name:'sonarscanner'
+        msbuild = tool name: 'MSBuild'
     }
     
     stages{
@@ -39,7 +40,7 @@ pipeline{
                 withSonarQubeEnv('localsonar') {
                     bat "dotnet build-server shutdown"
                     bat """${scannerHome}\\SonarScanner.MSBuild.exe begin /k:github-jenkins-sonar /d:sonar.sources="/" /d:sonar.cs.opencover.reportsPaths="results.xml" /d:sonar.coverage.exclusions="**Test*.cs"""
-                    bat "MSBuild.exe /t:Rebuild"
+                    bat "${msbuild}\\MSBuild.exe /t:Rebuild"
                     bat "dotnet build FirstSolution.sln"
                     bat "${scannerHome}\\SonarScanner.MSBuild.exe end"
                 }
