@@ -1,53 +1,59 @@
-pipeline{
+#!groovy
+pipeline { 
     agent any
-    environment {
-        scannerHome = tool name:'sonarscanner', type: 'hudson.plugins.sonar.MsBuildSQRunnerInstallation' 
-        msbuild = tool name: 'MSBuild'
-    }
-    stages{
-        stage('SCM'){
-            steps{
-                echo "Checking out from git repo";
-                git url:"https://github.com/Kandy98/dotnetproject.git"
-            }
-        }
-
-        stage('Restore-packages'){
-            steps{
-                echo "Preprocessing: Restore packages";
-                bat "dotnet restore"
-            }
-        }
-
-        stage('Build'){
-            steps{
-                echo "Building the project";
-                bat "dotnet build";
-	        	
-            }
-        }
-
-        stage('Unit-Tests'){
-            steps{
-                echo "Running Junit-Tests";
-                bat "dotnet test";
-                }
-        }
-
-	    stage('Code Coverage') {
-		    steps {
-                bat """C:/Users/kanverma/.nuget/packages/opencover/4.7.922/tools/OpenCover.Console.exe -target:"C:/Users/kanverma/Documents/dotnet training/networkspace/FirstCoreProject/bin/Debug/netcoreapp3.1/FirstCoreProject.exe" -register:user"""
-		    }
-	    }
-
-        stage('Build + SonarQube analysis') {
+    stages {
+        stage('Preparation') {
             steps {
-                withSonarQubeEnv('localsonar') {
-                    bat """${scannerHome}\\SonarScanner.MSBuild.exe begin /k:github-jenkins-sonar /d:sonar.scm.exclusions.disabled=true /d:sonar.cs.opencover.reportsPaths="results.xml" /d:sonar.coverage.exclusions="**Test*.cs"""
+                checkout scm
+            }
+        }
+        stage('Build') {
+            steps {
+                bat "dotnet build"
+            }
+        }
+        stage('Test') {
+            steps {
+                bat "dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover"
+            
+            }
+        }
+        stage('SonarQube') {
+            steps {
+                withSonarQubeEnv('sonarqube') {
+                     
+                    bat "dotnet build-server shutdown"
+                    bat """dotnet SonarScanner begin /k:KanvermaCoreProject /d:sonar.host.url=http://localhost:9000 /d:sonar.login="7ccdc841587f0c93416a8841b54fa9d10b1c3df4" /d:sonar.cs.opencover.reportsPaths="./FirstCoreProject/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Test*.cs"""
                     bat "dotnet build FirstSolution.sln"
-                    bat "${scannerHome}\\SonarQube.Scanner.MSBuild.exe end"
+                    bat """dotnet SonarScanner end /d:sonar.login="7ccdc841587f0c93416a8841b54fa9d10b1c3df4"""
+                    
                 }
             }
         }
+        stage("Quality Gate") {
+            steps {
+              timeout(time: 5, unit: 'MINUTES') {
+                waitForQualityGate abortPipeline: true
+              }
+            }
+        }
+        stage('Run') {
+            steps {
+                
+                bat "cd FirstCoreProject"
+                bat "dotnet run --project FirstCoreProject"
+            }
+        }
+    }
+    post {  
+        always {  
+            echo 'Build Result:'  
+        }  
+        success {  
+            echo 'The .net build was successful !'  
+        }  
+        failure {  
+            echo 'The .net build failed !'
+        }    
     }
 }
