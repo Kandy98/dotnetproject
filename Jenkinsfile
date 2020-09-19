@@ -23,9 +23,9 @@ pipeline {
                 withSonarQubeEnv('sonarqube') {
                      
                     bat "dotnet build-server shutdown"
-                    bat """dotnet SonarScanner begin /k:KanvermaCoreProject /d:sonar.host.url=http://localhost:9000 /d:sonar.cs.opencover.reportsPaths="./FirstCoreProject/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Test*.cs"""
+                    bat """dotnet SonarScanner begin /k:KanvermaCoreProject /d:sonar.host.url=http://localhost:9000 /d:sonar.login="4ef795f45bc5ed9cbea85bc28f601093a6c79ac7" /d:sonar.cs.opencover.reportsPaths="./FirstCoreProject/coverage.opencover.xml" /d:sonar.coverage.exclusions="**Test*.cs"""
                     bat "dotnet build FirstSolution.sln"
-                    bat """dotnet SonarScanner end"""
+                    bat """dotnet SonarScanner end /d:sonar.login="4ef795f45bc5ed9cbea85bc28f601093a6c79ac7"""
                     
                 }
 
