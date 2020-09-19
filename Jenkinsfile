@@ -28,11 +28,11 @@ pipeline {
                     bat """dotnet SonarScanner end"""
                     
                 }
-            }
 
-            steps {
                 sleep time: 10, unit: 'SECONDS';
             }
+
+        
         }
         stage("Quality Gate") {
             steps {
